@@ -1,0 +1,454 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <style>
+    body {
+      margin: 0;
+      background: #08090B;
+      color: #F2F4F5;
+      font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #C8FF4D; text-decoration: none; }
+    a:hover { color: #E2FF9B; }
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+    .eyebrow {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 12px; font-weight: 500; letter-spacing: 0.18em;
+      text-transform: uppercase; color: #7E8891;
+    }
+    h1, h2, h3 { font-family: "Space Grotesk", "Helvetica Neue", sans-serif; margin: 0; font-weight: 600; }
+    h1 { font-size: 74px; line-height: 0.98; letter-spacing: -0.03em; text-wrap: balance; }
+    h2 { font-size: 48px; line-height: 1.04; letter-spacing: -0.025em; text-wrap: balance; }
+    h3 { font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; }
+    p { margin: 0; font-size: 18px; line-height: 1.6; color: #A8B0B8; }
+    .rule { height: 1px; background: rgba(255,255,255,0.08); }
+  </style>
+</helmet>
+
+<div style="width: 1440px; background: #08090B; overflow: hidden;">
+
+  <!-- ============ NAV ============ -->
+  <div style="display: flex; align-items: center; justify-content: space-between; max-width: 1160px; margin: 0 auto; padding: 26px 40px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 17.5 8.5 10l4 4.5L21 5"></path>
+        <path d="M15.5 5H21v5.5"></path>
+      </svg>
+      <span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; letter-spacing: -0.01em;">Freedom AI</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 28px;">
+      <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #7E8891;">Next live session · [DATE + TIME]</span>
+      <a href="#register" style="display: inline-flex; align-items: center; height: 44px; padding: 0 22px; border-radius: 999px; background: #C8FF4D; color: #08090B; font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.01em;">Join the live session</a>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <div style="position: relative; padding: 96px 0 104px;">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px); background-size: 72px 72px; mask-image: radial-gradient(120% 80% at 50% 0%, #000 20%, transparent 78%); -webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000 20%, transparent 78%);"></div>
+    <div style="position: absolute; top: -180px; left: 50%; width: 900px; height: 520px; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(200,255,77,0.13), transparent); filter: blur(20px);"></div>
+
+    <div class="wrap" style="position: relative;">
+      <div style="display: flex; align-items: center; gap: 10px; padding: 7px 14px 7px 10px; border: 1px solid rgba(200,255,77,0.28); border-radius: 999px; width: fit-content; background: rgba(200,255,77,0.06);">
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: #C8FF4D; box-shadow: 0 0 0 4px rgba(200,255,77,0.18);"></span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #C8FF4D;">Free 3-day live experience</span>
+      </div>
+
+      <h1 style="margin-top: 30px; max-width: 940px; text-transform: uppercase;">
+        Gone are the days of spending <span style="color: #6B747C;">years</span> trying to figure out trading.
+      </h1>
+
+      <p style="margin-top: 26px; max-width: 620px; font-size: 21px; color: #B7BEC5;">
+        AI is changing the way people approach the market. Don't take my word for it —
+        come and watch a live AI-assisted trading session with me.
+      </p>
+
+      <div style="display: flex; align-items: center; gap: 18px; margin-top: 40px;">
+        <a href="#register" style="display: inline-flex; align-items: center; justify-content: center; height: 62px; padding: 0 36px; border-radius: 999px; background: #C8FF4D; color: #08090B; font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; box-shadow: 0 10px 40px rgba(200,255,77,0.22);">Experience AI trading live</a>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.5; color: #7E8891;">Free to attend<br>Starts [DATE] · [TIME + TIMEZONE]</span>
+      </div>
+
+      <!-- session preview card -->
+      <div style="margin-top: 68px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; overflow: hidden;">
+        <div style="background: #0D0F13; padding: 30px 32px;">
+          <div class="eyebrow">Day 01</div>
+          <h3 style="margin-top: 12px;">See it</h3>
+          <p style="margin-top: 8px; font-size: 15px;">Watch a live AI-assisted trading session, start to finish.</p>
+        </div>
+        <div style="background: #0D0F13; padding: 30px 32px;">
+          <div class="eyebrow">Day 02</div>
+          <h3 style="margin-top: 12px;">Understand it</h3>
+          <p style="margin-top: 8px; font-size: 15px;">See how the analysis and decision-making process actually works.</p>
+        </div>
+        <div style="background: #0D0F13; padding: 30px 32px;">
+          <div class="eyebrow">Day 03</div>
+          <h3 style="margin-top: 12px;">Experience it</h3>
+          <p style="margin-top: 8px; font-size: 15px;">Another live session — then decide if this is worth exploring further.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- ============ GONE ARE THE DAYS ============ -->
+  <div style="padding: 104px 0;">
+    <div class="wrap" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; align-items: start;">
+      <div>
+        <div class="eyebrow">The shift</div>
+        <h2 style="margin-top: 18px;">The way people trade is changing.</h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 22px;">
+        <p style="font-size: 20px; color: #DDE2E6;">Gone are the days of spending hours staring at charts searching for the perfect setup.</p>
+        <div class="rule"></div>
+        <p style="font-size: 20px; color: #DDE2E6;">Gone are the days of manually checking multiple timeframes, confirmations and conditions before every single trade.</p>
+        <div class="rule"></div>
+        <p style="font-size: 20px; color: #DDE2E6;">Gone are the days of second-guessing every entry because you're not sure what you missed.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FREEDOM AI INTRO ============ -->
+  <div style="padding: 0 0 104px;">
+    <div class="wrap">
+      <div style="position: relative; border: 1px solid rgba(255,255,255,0.09); border-radius: 22px; background: linear-gradient(180deg, #101317 0%, #0A0C0F 100%); padding: 64px 64px 60px; overflow: hidden;">
+        <div style="position: absolute; right: -120px; top: -120px; width: 420px; height: 420px; background: radial-gradient(closest-side, rgba(91,140,255,0.16), transparent);"></div>
+        <div style="position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 64px; align-items: center;">
+          <div>
+            <div class="eyebrow">Introducing</div>
+            <h2 style="margin-top: 16px; font-size: 44px;">Freedom AI</h2>
+            <p style="margin-top: 20px; font-size: 19px; color: #C3CAD0;">
+              Freedom AI brings AI-assisted analysis into the trading process — helping you read the market
+              and identify potential setups without manually doing every single step yourself.
+            </p>
+            <p style="margin-top: 18px; font-size: 16px; color: #8A939B;">
+              It isn't a promise of profit. It's a different way of approaching the work.
+            </p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 14px; padding: 18px 20px; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; background: rgba(255,255,255,0.02);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"></rect><path d="M8 10v4M12 8v6M16 11v3"></path></svg>
+              <span style="font-size: 15px; color: #DDE2E6;">Scans conditions across multiple timeframes</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; padding: 18px 20px; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; background: rgba(255,255,255,0.02);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.6-3.6"></path></svg>
+              <span style="font-size: 15px; color: #DDE2E6;">Surfaces potential setups for your review</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; padding: 18px 20px; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; background: rgba(255,255,255,0.02);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 0-4 4v1a4 4 0 0 0 0 8v1a4 4 0 0 0 8 0v-1a4 4 0 0 0 0-8V7a4 4 0 0 0-4-4Z"></path></svg>
+              <span style="font-size: 15px; color: #DDE2E6;">Leaves the decision — and the risk — with you</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CURIOSITY ============ -->
+  <div style="padding: 96px 0; background: #0B0D10; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="wrap" style="text-align: center;">
+      <h2 style="font-size: 56px; text-transform: uppercase; max-width: 860px; margin: 0 auto;">What if you could see it for yourself?</h2>
+      <p style="margin: 24px auto 0; max-width: 620px; font-size: 20px;">
+        Don't spend another year wondering whether AI can really change the way you approach trading.
+        Come and experience it live.
+      </p>
+      <div style="margin: 44px auto 0; display: inline-flex; flex-direction: column; align-items: center; gap: 18px;">
+        <div style="font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; letter-spacing: -0.01em; color: #C8FF4D; text-transform: uppercase;">Join my free 3-day AI trading experience</div>
+        <p style="max-width: 640px; font-size: 17px;">
+          For three days you'll watch me trade live, see exactly how AI is used in the process,
+          and experience what AI-assisted trading actually looks like.
+        </p>
+        <a href="#register" style="margin-top: 10px; display: inline-flex; align-items: center; justify-content: center; height: 58px; padding: 0 34px; border-radius: 999px; border: 1px solid #C8FF4D; color: #C8FF4D; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em;">Join today's live session</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ OLD WAY vs AI WAY ============ -->
+  <div style="padding: 104px 0;">
+    <div class="wrap">
+      <div class="eyebrow" style="text-align: center;">The difference</div>
+      <h2 style="margin-top: 16px; text-align: center;">Two ways to approach the same chart.</h2>
+
+      <div style="margin-top: 56px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
+
+        <div style="border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; background: #0C0E11; padding: 40px 36px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #E8583F;"></span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #E8583F;">The old way</span>
+          </div>
+          <div style="margin-top: 28px; display: flex; flex-direction: column; gap: 0;">
+            <div style="display: flex; align-items: center; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8583F" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+              <span style="font-size: 17px; color: #98A0A8;">Years of trying to master everything</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8583F" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+              <span style="font-size: 17px; color: #98A0A8;">Hours staring at charts</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8583F" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+              <span style="font-size: 17px; color: #98A0A8;">Manually checking multiple timeframes</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8583F" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+              <span style="font-size: 17px; color: #98A0A8;">Hunting for confirmations everywhere</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; padding: 16px 0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8583F" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+              <span style="font-size: 17px; color: #98A0A8;">Constantly second-guessing your entries</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="position: relative; border: 1px solid rgba(200,255,77,0.28); border-radius: 20px; background: linear-gradient(180deg, rgba(200,255,77,0.07), rgba(200,255,77,0.015)); padding: 40px 36px; overflow: hidden;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #C8FF4D;"></span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #C8FF4D;">The AI-assisted way</span>
+          </div>
+          <div style="margin-top: 28px; display: flex; flex-direction: column; gap: 0;">
+            <div style="display: flex; align-items: center; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>
+              <span style="font-size: 17px; color: #EAEFF2;">AI-assisted market analysis</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>
+              <span style="font-size: 17px; color: #EAEFF2;">Faster analysis across multiple conditions</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>
+              <span style="font-size: 17px; color: #EAEFF2;">Potential setups identified for review</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>
+              <span style="font-size: 17px; color: #EAEFF2;">Less time manually scanning charts</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; padding: 16px 0;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>
+              <span style="font-size: 17px; color: #EAEFF2;">More focus on decisions and risk management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 32px; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 22px 28px; border: 1px dashed rgba(255,255,255,0.14); border-radius: 14px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A939B" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.2v.1"></path></svg>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 17px; color: #C3CAD0;">AI doesn't remove the risk from trading. It changes how you approach the process.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ IMAGINE ============ -->
+  <div style="padding: 104px 0; background: #0B0D10; border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="wrap" style="display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: 72px; align-items: center;">
+      <div>
+        <div class="eyebrow">Imagine this</div>
+        <h2 style="margin-top: 18px;">You open your phone.</h2>
+        <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 18px;">
+          <p style="font-size: 19px; color: #C3CAD0;">Instead of spending hours going through charts, an AI-assisted system is already helping you analyze the market.</p>
+          <p style="font-size: 19px; color: #C3CAD0;">You can see what it's identifying. You watch the analysis unfold.</p>
+          <p style="font-size: 19px; color: #C3CAD0;">You understand <em style="color: #F2F4F5; font-style: normal; font-weight: 600;">why</em> a potential setup is being considered.</p>
+          <p style="font-size: 19px; color: #C3CAD0;">And instead of wondering what trading looks like — you're experiencing it live.</p>
+        </div>
+        <div style="margin-top: 34px; padding-left: 20px; border-left: 2px solid #C8FF4D;">
+          <span style="font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 600; color: #F2F4F5;">That's what I want you to experience.</span>
+        </div>
+      </div>
+
+      <!-- phone mock -->
+      <div style="display: flex; justify-content: center;">
+        <div style="width: 330px; border: 1px solid rgba(255,255,255,0.12); border-radius: 38px; background: #0F1216; padding: 14px; box-shadow: 0 40px 90px rgba(0,0,0,0.6);">
+          <div style="border-radius: 26px; background: #08090B; overflow: hidden;">
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 20px 14px;">
+              <span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 600;">Freedom AI</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #C8FF4D;">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #C8FF4D;"></span>Live
+              </span>
+            </div>
+            <div style="padding: 0 20px 18px;">
+              <div style="height: 150px; border-radius: 14px; background: #0C0F13; border: 1px solid rgba(255,255,255,0.07); position: relative; overflow: hidden;">
+                <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 100% 30px;"></div>
+                <svg width="290" height="150" viewBox="0 0 290 150" fill="none" style="position: absolute; inset: 0;">
+                  <path d="M0 116 L34 104 L58 120 L86 88 L112 96 L140 66 L168 78 L196 52 L224 60 L252 34 L290 22" stroke="#C8FF4D" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
+                  <path d="M0 116 L34 104 L58 120 L86 88 L112 96 L140 66 L168 78 L196 52 L224 60 L252 34 L290 22 L290 150 L0 150 Z" fill="url(#g)"></path>
+                  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C8FF4D" stop-opacity="0.18"></stop><stop offset="1" stop-color="#C8FF4D" stop-opacity="0"></stop></linearGradient></defs>
+                  <circle cx="196" cy="52" r="4" fill="#C8FF4D"></circle>
+                  <circle cx="196" cy="52" r="9" stroke="#C8FF4D" stroke-opacity="0.35"></circle>
+                </svg>
+              </div>
+
+              <div style="margin-top: 14px; display: flex; flex-direction: column; gap: 10px;">
+                <div style="padding: 14px; border-radius: 12px; background: rgba(200,255,77,0.07); border: 1px solid rgba(200,255,77,0.22);">
+                  <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #C8FF4D;">Potential setup identified</div>
+                  <div style="margin-top: 6px; font-size: 13px; color: #DDE2E6; line-height: 1.45;">Multiple timeframes aligned. Awaiting your review before any decision.</div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+                  <div style="padding: 11px 10px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
+                    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #7E8891;">H4</div>
+                    <div style="margin-top: 3px; font-size: 12px; color: #DDE2E6;">Checked</div>
+                  </div>
+                  <div style="padding: 11px 10px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
+                    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #7E8891;">H1</div>
+                    <div style="margin-top: 3px; font-size: 12px; color: #DDE2E6;">Checked</div>
+                  </div>
+                  <div style="padding: 11px 10px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);">
+                    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #7E8891;">M15</div>
+                    <div style="margin-top: 3px; font-size: 12px; color: #DDE2E6;">Checked</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ THE 3 DAYS ============ -->
+  <div style="padding: 104px 0;">
+    <div class="wrap">
+      <div class="eyebrow">What happens</div>
+      <h2 style="margin-top: 16px; max-width: 720px;">Three days. Three live sessions. No theory.</h2>
+
+      <div style="margin-top: 52px; display: flex; flex-direction: column; gap: 0;">
+        <div style="display: grid; grid-template-columns: 120px minmax(0, 300px) minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 34px 0; border-top: 1px solid rgba(255,255,255,0.09);">
+          <span style="font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 700; color: #C8FF4D; letter-spacing: -0.03em;">01</span>
+          <h3 style="font-size: 28px; text-transform: uppercase;">See it</h3>
+          <p>Watch a live AI-assisted trading session — the full process, in real time, nothing edited out.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: 120px minmax(0, 300px) minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 34px 0; border-top: 1px solid rgba(255,255,255,0.09);">
+          <span style="font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 700; color: #C8FF4D; letter-spacing: -0.03em;">02</span>
+          <h3 style="font-size: 28px; text-transform: uppercase;">Understand it</h3>
+          <p>See how the analysis and the decision-making process work, and why a setup gets considered at all.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: 120px minmax(0, 300px) minmax(0, 1fr); gap: 40px; align-items: baseline; padding: 34px 0; border-top: 1px solid rgba(255,255,255,0.09); border-bottom: 1px solid rgba(255,255,255,0.09);">
+          <span style="font-family: 'Space Grotesk', sans-serif; font-size: 40px; font-weight: 700; color: #C8FF4D; letter-spacing: -0.03em;">03</span>
+          <h3 style="font-size: 28px; text-transform: uppercase;">Experience it</h3>
+          <p>Another live session — then decide for yourself whether AI-assisted trading is something you want to explore further.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <div style="padding: 96px 0; background: #0B0D10; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);">
+    <div class="wrap">
+      <h2 style="text-transform: uppercase; max-width: 640px;">Don't just take my word for it.</h2>
+      <p style="margin-top: 16px; max-width: 560px;">Real messages from people inside the community. [REPLACE WITH YOUR OWN SCREENSHOTS / QUOTES]</p>
+
+      <div style="margin-top: 44px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;">
+        <div style="border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; background: #0E1115; padding: 28px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 1.5-4.5 4-4.5 7.5A4.5 4.5 0 0 0 9 18a3.5 3.5 0 0 0 0-7c-.6 0-1.1.1-1.5.3C7.8 9.6 8.6 8 10 7Z"></path><path d="M19 6c-3 1.5-4.5 4-4.5 7.5A4.5 4.5 0 0 0 19 18a3.5 3.5 0 0 0 0-7c-.6 0-1.1.1-1.5.3C17.8 9.6 18.6 8 20 7Z"></path></svg>
+          <p style="margin-top: 16px; font-size: 16px; color: #DDE2E6;">[TESTIMONIAL 1 — paste a genuine message here. Keep it in the person's own words.]</p>
+          <div style="margin-top: 22px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #7E8891;">[Name] · [Country]</div>
+        </div>
+        <div style="border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; background: #0E1115; padding: 28px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 1.5-4.5 4-4.5 7.5A4.5 4.5 0 0 0 9 18a3.5 3.5 0 0 0 0-7c-.6 0-1.1.1-1.5.3C7.8 9.6 8.6 8 10 7Z"></path><path d="M19 6c-3 1.5-4.5 4-4.5 7.5A4.5 4.5 0 0 0 19 18a3.5 3.5 0 0 0 0-7c-.6 0-1.1.1-1.5.3C17.8 9.6 18.6 8 20 7Z"></path></svg>
+          <p style="margin-top: 16px; font-size: 16px; color: #DDE2E6;">[TESTIMONIAL 2 — paste a genuine message here.]</p>
+          <div style="margin-top: 22px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #7E8891;">[Name] · [Country]</div>
+        </div>
+        <div style="border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; background: #0E1115; padding: 28px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6c-3 1.5-4.5 4-4.5 7.5A4.5 4.5 0 0 0 9 18a3.5 3.5 0 0 0 0-7c-.6 0-1.1.1-1.5.3C7.8 9.6 8.6 8 10 7Z"></path><path d="M19 6c-3 1.5-4.5 4-4.5 7.5A4.5 4.5 0 0 0 19 18a3.5 3.5 0 0 0 0-7c-.6 0-1.1.1-1.5.3C17.8 9.6 18.6 8 20 7Z"></path></svg>
+          <p style="margin-top: 16px; font-size: 16px; color: #DDE2E6;">[TESTIMONIAL 3 — paste a genuine message here.]</p>
+          <div style="margin-top: 22px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #7E8891;">[Name] · [Country]</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 28px;">
+        <a href="[TELEGRAM TESTIMONY CHANNEL LINK]" style="display: inline-flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 500;">
+          See more community feedback
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FINAL CTA + FORM ============ -->
+  <div id="register" style="position: relative; padding: 104px 0; overflow: hidden;">
+    <div style="position: absolute; bottom: -260px; left: 50%; width: 1000px; height: 560px; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(200,255,77,0.12), transparent);"></div>
+    <div class="wrap" style="position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 440px); gap: 72px; align-items: center;">
+      <div>
+        <h2 style="font-size: 54px; text-transform: uppercase;">Ready to experience AI trading for yourself?</h2>
+        <p style="margin-top: 24px; font-size: 19px; max-width: 520px;">
+          You don't have to decide today whether this is for you. Just come and watch one live session —
+          then judge it with your own eyes.
+        </p>
+        <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>
+            <span style="font-size: 16px; color: #C3CAD0;">Completely free to attend</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>
+            <span style="font-size: 16px; color: #C3CAD0;">Live, not pre-recorded</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"></path></svg>
+            <span style="font-size: 16px; color: #C3CAD0;">No experience needed to attend</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border: 1px solid rgba(255,255,255,0.1); border-radius: 22px; background: #0E1115; padding: 36px;">
+        <div class="eyebrow">Save your seat</div>
+        <h3 style="margin-top: 10px; font-size: 26px;">Next session starts [DATE]</h3>
+        <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #7E8891;">First name</span>
+            <div style="height: 52px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.03); display: flex; align-items: center; padding: 0 16px; font-size: 16px; color: #5F686F;">Your first name</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #7E8891;">Email</span>
+            <div style="height: 52px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.03); display: flex; align-items: center; padding: 0 16px; font-size: 16px; color: #5F686F;">you@email.com</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #7E8891;">WhatsApp number</span>
+            <div style="height: 52px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.03); display: flex; align-items: center; padding: 0 16px; font-size: 16px; color: #5F686F;">+[country code] ...</div>
+          </div>
+          <div style="margin-top: 8px; height: 58px; border-radius: 12px; background: #C8FF4D; color: #08090B; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em;">Experience AI trading live</div>
+          <span style="font-size: 13px; color: #7E8891; text-align: center; line-height: 1.5;">You'll get the session link by email and WhatsApp. Leave any time.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <div style="border-top: 1px solid rgba(255,255,255,0.08); padding: 48px 0 56px; background: #0A0B0E;">
+    <div class="wrap">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 60px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8FF4D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17.5 8.5 10l4 4.5L21 5"></path><path d="M15.5 5H21v5.5"></path></svg>
+          <span style="font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600;">Freedom AI</span>
+        </div>
+        <p style="max-width: 660px; font-size: 13px; line-height: 1.65; color: #6C757D;">
+          <strong style="color: #8A939B; font-weight: 600;">Risk disclaimer.</strong>
+          Trading foreign exchange, CFDs and other leveraged instruments carries a high level of risk and can result in the loss of all of your capital.
+          Freedom AI provides AI-assisted analysis and education only — it does not provide financial advice, does not execute trades on your behalf,
+          and does not guarantee any result. Past performance is not indicative of future results. Only trade with money you can afford to lose.
+          [ADD YOUR COMPANY NAME, REGISTRATION AND JURISDICTION HERE]
+        </p>
+      </div>
+      <div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between;">
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #5F686F;">© [YEAR] Freedom AI. All rights reserved.</span>
+        <div style="display: flex; align-items: center; gap: 24px;">
+          <a href="#" style="font-size: 13px; color: #8A939B;">Privacy</a>
+          <a href="#" style="font-size: 13px; color: #8A939B;">Terms</a>
+          <a href="#" style="font-size: 13px; color: #8A939B;">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":7400}}'>
+class Component extends DCLogic {}
+</script>
+</body>
+</html>

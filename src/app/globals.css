@@ -1,0 +1,329 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Palette. Dark is the canonical design; light is a faithful daylight
+   translation of it. Every colour is defined here once and referenced through
+   the @theme block below, so a theme switch repaints the whole page.
+   --------------------------------------------------------------------------- */
+
+:root {
+  /* Surfaces */
+  --ink: #08090b;
+  --ink-raised: #0b0d10;
+  --panel: #0e1115;
+  --panel-deep: #0d0f13;
+  --footer: #0a0b0e;
+
+  /* Type */
+  --fg: #f2f4f5;
+  --fg-soft: #dde2e6;
+  --fg-muted: #a8b0b8;
+  --fg-dim: #7e8891;
+  --fg-faint: #5f686f;
+
+  /* Accents. `signal` is the fill (always takes ink-coloured text on top);
+     `signal-text` is the readable accent for type, icons and hairlines. */
+  --signal: #c8ff4d;
+  --signal-soft: #e2ff9b;
+  --signal-text: #c8ff4d;
+  --alarm: #e8583f;
+  --cool: #5b8cff;
+
+  /* Hairlines */
+  --line: rgba(255, 255, 255, 0.08);
+  --line-soft: rgba(255, 255, 255, 0.06);
+  --line-strong: rgba(255, 255, 255, 0.12);
+
+  /* Atmosphere */
+  --glow-signal: rgba(200, 255, 77, 0.13);
+  --glow-cool: rgba(91, 140, 255, 0.17);
+  --veil: rgba(255, 255, 255, 0.028);
+  --wash: rgba(255, 255, 255, 0.03);
+  --wash-soft: rgba(255, 255, 255, 0.02);
+  --chart-bg-top: #0d1410;
+  --chart-bg-bottom: #07080a;
+  --intro-top: #101317;
+  --intro-bottom: #0a0c0f;
+  --device-shell: #0f1216;
+  --shadow-card: 0 40px 90px rgba(0, 0, 0, 0.6);
+  --shadow-cta: 0 10px 40px rgba(200, 255, 77, 0.22);
+  --candle-up: #4ade80;
+  --candle-down: #e0483a;
+  --axis-label: #b9a15a;
+  --trend-a: #7ecb2f;
+  --trend-b: #c8ff4d;
+  --trend-c: #f4ffe0;
+  --arrowhead: #f4ffe0;
+  --on-signal: #08090b;
+  --ticker-bg: #c8ff4d;
+  --ticker-fg: #08090b;
+}
+
+/* Explicit light choice */
+:root[data-theme="light"] {
+  --ink: #f6f7f3;
+  --ink-raised: #ffffff;
+  --panel: #ffffff;
+  --panel-deep: #ffffff;
+  --footer: #eef0ea;
+
+  --fg: #101310;
+  --fg-soft: #2b2f28;
+  --fg-muted: #565b51;
+  --fg-dim: #6f746a;
+  --fg-faint: #989d92;
+
+  --signal: #c8ff4d;
+  --signal-soft: #d7ff7a;
+  --signal-text: #4a7207;
+  --alarm: #b03a28;
+  --cool: #2f5bd0;
+
+  --line: rgba(16, 19, 16, 0.12);
+  --line-soft: rgba(16, 19, 16, 0.08);
+  --line-strong: rgba(16, 19, 16, 0.18);
+
+  --glow-signal: rgba(140, 190, 30, 0.16);
+  --glow-cool: rgba(47, 91, 208, 0.12);
+  --veil: rgba(16, 19, 16, 0.045);
+  --wash: rgba(16, 19, 16, 0.03);
+  --wash-soft: rgba(16, 19, 16, 0.02);
+  --chart-bg-top: #ffffff;
+  --chart-bg-bottom: #f1f3ec;
+  --intro-top: #ffffff;
+  --intro-bottom: #f3f5ee;
+  --device-shell: #e7eae1;
+  --shadow-card: 0 30px 70px rgba(16, 19, 16, 0.16);
+  --shadow-cta: 0 10px 30px rgba(140, 190, 30, 0.35);
+  --candle-up: #1a8f4a;
+  --candle-down: #b8392a;
+  --axis-label: #857028;
+  --trend-a: #3f7a10;
+  --trend-b: #5f9e14;
+  --trend-c: #2f5f08;
+  --arrowhead: #2f5f08;
+  --ticker-bg: #161a14;
+  --ticker-fg: #d7ff7a;
+}
+
+/* System preference, when the visitor has not chosen */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --ink: #f6f7f3;
+    --ink-raised: #ffffff;
+    --panel: #ffffff;
+    --panel-deep: #ffffff;
+    --footer: #eef0ea;
+
+    --fg: #101310;
+    --fg-soft: #2b2f28;
+    --fg-muted: #565b51;
+    --fg-dim: #6f746a;
+    --fg-faint: #989d92;
+
+    --signal: #c8ff4d;
+    --signal-soft: #d7ff7a;
+    --signal-text: #4a7207;
+    --alarm: #b03a28;
+    --cool: #2f5bd0;
+
+    --line: rgba(16, 19, 16, 0.12);
+    --line-soft: rgba(16, 19, 16, 0.08);
+    --line-strong: rgba(16, 19, 16, 0.18);
+
+    --glow-signal: rgba(140, 190, 30, 0.16);
+    --glow-cool: rgba(47, 91, 208, 0.12);
+    --veil: rgba(16, 19, 16, 0.045);
+    --wash: rgba(16, 19, 16, 0.03);
+    --wash-soft: rgba(16, 19, 16, 0.02);
+    --chart-bg-top: #ffffff;
+    --chart-bg-bottom: #f1f3ec;
+    --intro-top: #ffffff;
+    --intro-bottom: #f3f5ee;
+    --device-shell: #e7eae1;
+    --shadow-card: 0 30px 70px rgba(16, 19, 16, 0.16);
+    --shadow-cta: 0 10px 30px rgba(140, 190, 30, 0.35);
+    --candle-up: #1a8f4a;
+    --candle-down: #b8392a;
+    --axis-label: #857028;
+    --trend-a: #3f7a10;
+    --trend-b: #5f9e14;
+    --trend-c: #2f5f08;
+    --arrowhead: #2f5f08;
+    --ticker-bg: #161a14;
+    --ticker-fg: #d7ff7a;
+  }
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-raised: var(--ink-raised);
+  --color-panel: var(--panel);
+  --color-panel-deep: var(--panel-deep);
+  --color-footer: var(--footer);
+
+  --color-fg: var(--fg);
+  --color-fg-soft: var(--fg-soft);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-dim: var(--fg-dim);
+  --color-fg-faint: var(--fg-faint);
+
+  --color-signal: var(--signal);
+  --color-signal-soft: var(--signal-soft);
+  --color-on-signal: var(--on-signal);
+  --color-signal-text: var(--signal-text);
+  --color-alarm: var(--alarm);
+  --color-cool: var(--cool);
+
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-line-strong: var(--line-strong);
+
+  --color-wash: var(--wash);
+  --color-wash-soft: var(--wash-soft);
+
+  --font-billboard: var(--font-archivo), "Helvetica Neue", sans-serif;
+  --font-display: var(--font-space-grotesk), "Helvetica Neue", sans-serif;
+  --font-sans: var(--font-plex-sans), Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+}
+
+body {
+  background: var(--ink);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--signal);
+  color: #08090b;
+}
+
+/* Faint chart grid used behind the hero. */
+.grid-veil {
+  background-image:
+    linear-gradient(var(--veil) 1px, transparent 1px),
+    linear-gradient(90deg, var(--veil) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(120% 80% at 50% 0%, #000 20%, transparent 78%);
+  -webkit-mask-image: radial-gradient(120% 80% at 50% 0%, #000 20%, transparent 78%);
+}
+
+.glow-signal {
+  background: radial-gradient(closest-side, var(--glow-signal), transparent);
+}
+
+.glow-cool {
+  background: radial-gradient(closest-side, var(--glow-cool), transparent);
+}
+
+.shadow-cta {
+  box-shadow: var(--shadow-cta);
+}
+
+.shadow-device {
+  box-shadow: var(--shadow-card);
+}
+
+/* Scrolling announcement bar above the nav. */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track {
+  animation: ticker-scroll 26s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --- Hero chart: idle "live" state and hover behaviour --------------------- */
+
+@keyframes chart-pulse {
+  0% {
+    r: 4;
+    opacity: 0.9;
+  }
+  70% {
+    r: 13;
+    opacity: 0;
+  }
+  100% {
+    r: 13;
+    opacity: 0;
+  }
+}
+
+.chart-pulse {
+  animation: chart-pulse 2.4s ease-out infinite;
+  transform-box: fill-box;
+}
+
+@keyframes trend-draw {
+  from {
+    stroke-dashoffset: 1400;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Only pointer devices get the redraw — it would fire on every tap otherwise. */
+@media (hover: hover) {
+  .chart-shell .chart-trend {
+    stroke-dasharray: 1400;
+    stroke-dashoffset: 0;
+  }
+
+  .chart-shell:hover .chart-trend {
+    animation: trend-draw 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .chart-shell .chart-candle {
+    transition:
+      fill-opacity 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  .chart-shell:hover .chart-candle {
+    fill-opacity: 0.45;
+  }
+
+  .chart-shell:hover .chart-candle[data-active="true"] {
+    fill-opacity: 1;
+  }
+
+  .chart-shell .chart-wick {
+    transition: stroke-opacity 0.18s ease;
+  }
+
+  .chart-shell:hover .chart-wick {
+    stroke-opacity: 0.4;
+  }
+
+  .chart-shell:hover .chart-wick[data-active="true"] {
+    stroke-opacity: 1;
+  }
+}

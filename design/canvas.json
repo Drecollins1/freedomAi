@@ -1,0 +1,23 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1440, "h": 7900, "title": "Freedom AI — Desktop (1440)" },
+    { "file": "Mobile.dc.html", "x": 1580, "y": 0, "w": 390, "h": 6000, "title": "Freedom AI — Mobile (390)" }
+  ],
+  "annotations": [
+    {
+      "id": "note-brief",
+      "x": 0,
+      "y": -200,
+      "w": 560,
+      "text": "Direction A, locked in. Desktop at 1440 and mobile at 390 carry the same sections in the same order — the mobile version drops the phone-mock frame (you are already on a phone) and stacks the Old Way / AI-Assisted Way panels.\nBreakpoints for the Next.js build: 1440 → 1024 (same layout, tighter gutters) → 768 (two-column grids collapse to one) → 390."
+    },
+    {
+      "id": "note-placeholders",
+      "x": 1580,
+      "y": -200,
+      "w": 390,
+      "text": "Everything in [BRACKETS] is a real fact I don't have yet: session dates and times, the three testimonials, the Telegram channel link, and the company name + jurisdiction for the risk disclaimer."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}
