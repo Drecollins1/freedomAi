@@ -32,9 +32,9 @@ export const ticker = [
 ] as const;
 
 export const hero = {
-  badge: "Trade smart Live Freer fit dey here",
-  eyebrowAccent: "Trade smarter.",
-  eyebrowRest: "Live freer.",
+  /** The badge reads in two colours: the accent half, then the plain half. */
+  badgeAccent: "Trade smart",
+  badgeRest: "Live Freer",
   /** Desktop sets the headline in caps with numerals; mobile spells it out. */
   headline: {
     desktop: { plain: "Skip the 5-year grind.", accent: "Trade with AI in 3 days." },

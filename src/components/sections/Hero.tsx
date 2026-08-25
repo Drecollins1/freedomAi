@@ -30,16 +30,12 @@ export function Hero() {
         <div>
           <div className="border-line-strong bg-wash flex w-fit items-center gap-2.5 rounded-full border py-2 pr-4 pl-3">
             <span className="bg-signal h-2 w-2 rounded-full" aria-hidden />
-            <span className="font-display text-[11px] font-medium tracking-[0.16em] uppercase md:text-xs">
-              {hero.badge}
+            <span className="font-display text-[11px] font-medium tracking-[0.16em] uppercase md:text-lg">
+              <span className="text-signal-text">{hero.badgeAccent}</span>{" "}
+              <span className="text-fg">{hero.badgeRest}</span>
             </span>
           </div>
 
-          {/* The reference shows this line on desktop only. */}
-          <p className="font-billboard mt-7 hidden text-[17px] font-bold tracking-[0.01em] uppercase md:block">
-            <span className="text-signal-text">{hero.eyebrowAccent}</span>{" "}
-            <span className="text-fg">{hero.eyebrowRest}</span>
-          </p>
 
           <h1 className="font-billboard mt-5 font-extrabold tracking-[-0.02em] md:mt-3.5">
             {/* Mobile: sentence case, numbers spelled out. */}
