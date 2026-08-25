@@ -32,7 +32,7 @@ export const ticker = [
 ] as const;
 
 export const hero = {
-  badge: "Phase 2 enrollment open",
+  badge: "Trade smart Live Freer fit dey here",
   eyebrowAccent: "Trade smarter.",
   eyebrowRest: "Live freer.",
   /** Desktop sets the headline in caps with numerals; mobile spells it out. */
