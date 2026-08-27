@@ -33,9 +33,10 @@ export function Owner() {
             <Image
               src={owner.photo}
               alt={owner.name}
-              width={640}
-              height={800}
-              className="border-line-strong aspect-[4/5] w-full rounded-[20px] border object-cover"
+              width={864}
+              height={1152}
+              sizes="(max-width: 1024px) 92vw, 320px"
+              className="border-line-strong aspect-[4/5] w-full rounded-[20px] border object-cover object-top"
             />
           ) : (
             <Monogram />

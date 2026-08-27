@@ -13,6 +13,8 @@ export const site = {
   sessionTime: "[TIME + TIMEZONE]",
   /** Telegram channel holding the full testimonial feed. */
   testimonialsUrl: "[TELEGRAM TESTIMONY CHANNEL LINK]",
+  /** Invite link for the live-session channel — the hero button points here. */
+  telegramInviteUrl: "https://t.me/+fJRkdmgs5UYwOWY0",
   year: new Date().getFullYear(),
 } as const;
 
@@ -182,8 +184,13 @@ export const owner = {
   heading: "There's a real person behind Freedom AI.",
   name: "[FULL NAME]",
   role: "[ROLE — e.g. Founder & Lead Trader]",
-  /** Optional headshot in /public/images; falls back to a monogram. */
-  photo: null as string | null,
+  /**
+   * Headshot in /public/images.
+   * PLACEHOLDER — swap for a real photograph of the named person before
+   * launch. A stock or generated portrait under "there's a real person behind
+   * Freedom AI" undercuts the exact claim the section makes.
+   */
+  photo: "/images/avatar.jpeg" as string | null,
   bio: [
     "I've spent [NUMBER] years trading the markets, and most of those years were the slow way — screens full of charts, timeframes checked by hand, and plenty of decisions I second-guessed afterwards.",
     "Freedom AI came out of that. It's the process I actually use, with AI doing the scanning I used to do manually. I run every live session myself, and I show the trades that don't work alongside the ones that do.",
