@@ -3,7 +3,7 @@ import { Check } from "@/components/ui/Icon";
 import { RegistrationForm } from "@/components/sections/RegistrationForm";
 import { finalCta } from "@/lib/content";
 
-export function FinalCta() {
+export function FinalCta({ sessionDate }: { sessionDate: string }) {
   return (
     <section id="register" className="relative scroll-mt-8 overflow-hidden py-12 md:py-20 lg:py-26">
       <div
@@ -30,7 +30,7 @@ export function FinalCta() {
           </ul>
         </div>
 
-        <RegistrationForm />
+        <RegistrationForm sessionDate={sessionDate} />
       </Container>
     </section>
   );

@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Primitives";
 import { LogoMark } from "@/components/ui/Icon";
 import { footer, site } from "@/lib/content";
 
-export function SiteFooter() {
+export function SiteFooter({ companyLine }: { companyLine: string }) {
   return (
     <footer className="border-line bg-footer border-t py-8 md:py-12 lg:pt-12 lg:pb-14">
       <Container>
@@ -15,6 +15,7 @@ export function SiteFooter() {
           <p className="text-fg-dim max-w-[660px] text-[13px] leading-relaxed">
             <strong className="text-fg-dim font-semibold">{footer.disclaimerLead}</strong>{" "}
             {footer.disclaimer}
+            {companyLine && ` ${companyLine}`}
           </p>
         </div>
 

@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { Check } from "@/components/ui/Icon";
-import { cta, finalCta, site } from "@/lib/content";
+import { cta, finalCta } from "@/lib/content";
 
 type Status = "idle" | "submitting" | "done" | "error";
 
@@ -30,7 +30,7 @@ const fields = [
   },
 ] as const;
 
-export function RegistrationForm() {
+export function RegistrationForm({ sessionDate }: { sessionDate: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
 
@@ -70,7 +70,7 @@ export function RegistrationForm() {
           You&rsquo;re in.
         </h3>
         <p className="text-fg-muted mt-3 text-[15px] leading-relaxed">
-          Your seat for {site.sessionDate} is saved. Check your email and WhatsApp for the session
+          Your seat for {sessionDate} is saved. Check your email and WhatsApp for the session
           link — it usually arrives within a few minutes.
         </p>
       </div>
@@ -83,7 +83,7 @@ export function RegistrationForm() {
         {finalCta.formEyebrow}
       </p>
       <h3 className="font-display mt-2.5 text-[22px] font-semibold md:text-[26px]">
-        Next session starts {site.sessionDate}
+        Next session starts {sessionDate}
       </h3>
 
       <form onSubmit={handleSubmit} noValidate={false} className="mt-5 flex flex-col gap-3.5 md:mt-6.5">

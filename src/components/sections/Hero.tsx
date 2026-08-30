@@ -1,12 +1,12 @@
 import { Container } from "@/components/ui/Primitives";
 import { ArrowRight } from "@/components/ui/Icon";
 import { HeroChart } from "@/components/sections/HeroChart";
-import { hero, site } from "@/lib/content";
+import { hero } from "@/lib/content";
 
-function HeroCta() {
+function HeroCta({ telegramInviteUrl }: { telegramInviteUrl: string }) {
   return (
     <a
-      href={site.telegramInviteUrl}
+      href={telegramInviteUrl}
       target="_blank"
       rel="noopener noreferrer"
       className="bg-signal text-on-signal hover:bg-signal-soft focus-visible:outline-signal-text group flex w-full max-w-[440px] items-center justify-between gap-4 rounded-full py-3 pr-3 pl-7 transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 md:py-3.5 md:pr-3.5 md:pl-9"
@@ -23,7 +23,7 @@ function HeroCta() {
   );
 }
 
-export function Hero() {
+export function Hero({ telegramInviteUrl }: { telegramInviteUrl: string }) {
   return (
     <section className="relative overflow-hidden py-8 md:py-14 lg:py-20">
       <div className="grid-veil pointer-events-none absolute inset-0" aria-hidden />
@@ -65,7 +65,7 @@ export function Hero() {
           </div>
 
           <div className="mt-7 md:mt-9">
-            <HeroCta />
+            <HeroCta telegramInviteUrl={telegramInviteUrl} />
           </div>
         </div>
 

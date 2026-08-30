@@ -13,27 +13,32 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { Owner } from "@/components/sections/Owner";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { SiteFooter } from "@/components/sections/SiteFooter";
+import { getSettings } from "@/lib/settings";
 
-export default function Home() {
+export default async function Home() {
+  // The owner-editable values are read once here and passed down, so the rest
+  // of the page stays made of plain, prop-driven components.
+  const settings = await getSettings();
+
   return (
     <>
       <Ticker />
-      <SiteNav />
+      <SiteNav sessionDate={settings.sessionDate} sessionTime={settings.sessionTime} />
       <main className="flex-1">
-        <Hero />
+        <Hero telegramInviteUrl={settings.telegramInviteUrl} />
         <MarketStrip />
         <Shift />
         <Intro />
         <Curiosity />
         <Comparison />
         <Imagine />
-        <TelegramFlow />
+        <TelegramFlow members={settings.telegramMembers} />
         <ThreeDays />
-        <Testimonials />
+        <Testimonials testimonialsUrl={settings.testimonialsUrl} />
         <Owner />
-        <FinalCta />
+        <FinalCta sessionDate={settings.sessionDate} />
       </main>
-      <SiteFooter />
+      <SiteFooter companyLine={settings.companyLine} />
     </>
   );
 }

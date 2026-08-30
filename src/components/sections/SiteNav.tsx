@@ -3,7 +3,13 @@ import { LogoMark } from "@/components/ui/Icon";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { cta, site } from "@/lib/content";
 
-export function SiteNav() {
+export function SiteNav({
+  sessionDate,
+  sessionTime,
+}: {
+  sessionDate: string;
+  sessionTime: string;
+}) {
   return (
     <header className="border-line-soft border-b">
       <Container className="flex items-center justify-between py-[18px] md:py-[26px]">
@@ -16,7 +22,7 @@ export function SiteNav() {
 
         <div className="flex items-center gap-3 md:gap-6">
           <span className="text-fg-dim hidden font-mono text-xs tracking-[0.14em] uppercase lg:inline">
-            Next live session · {site.sessionDate} · {site.sessionTime}
+            Next live session · {sessionDate} · {sessionTime}
           </span>
 
           {/* Mobile keeps a compact badge; the full CTA lives in the hero. */}

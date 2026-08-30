@@ -11,7 +11,7 @@ function TelegramGlyph({ className = "" }: { className?: string }) {
   );
 }
 
-function ChannelHeader() {
+function ChannelHeader({ members }: { members: string }) {
   return (
     <div className="border-line-soft flex items-center gap-3 border-b px-4 py-3.5 md:px-5">
       <span className="bg-[#2AABEE] flex h-9 w-9 items-center justify-center rounded-full text-white">
@@ -19,7 +19,7 @@ function ChannelHeader() {
       </span>
       <div className="min-w-0">
         <p className="font-display truncate text-sm font-semibold">{telegram.thread.channel}</p>
-        <p className="text-fg-dim truncate text-xs">{telegram.thread.members}</p>
+        <p className="text-fg-dim truncate text-xs">{members}</p>
       </div>
     </div>
   );
@@ -57,10 +57,10 @@ function SetupMessage({
   );
 }
 
-function MockThread() {
+function MockThread({ members }: { members: string }) {
   return (
     <div className="border-line-strong bg-panel shadow-device overflow-hidden rounded-[20px] border">
-      <ChannelHeader />
+      <ChannelHeader members={members} />
 
       <div className="flex flex-col gap-2.5 px-4 py-4 md:px-5 md:py-5">
         {telegram.thread.messages.map((message, i) =>
@@ -83,7 +83,7 @@ function MockThread() {
   );
 }
 
-export function TelegramFlow() {
+export function TelegramFlow({ members }: { members: string }) {
   return (
     <section className="border-line-soft border-t py-12 md:py-20 lg:py-26">
       <Container className="grid items-center gap-10 lg:grid-cols-[1fr_minmax(0,420px)] lg:gap-16">
@@ -123,7 +123,7 @@ export function TelegramFlow() {
               className="border-line-strong shadow-device h-auto w-full rounded-[20px] border"
             />
           ) : (
-            <MockThread />
+            <MockThread members={members} />
           )}
 
           <p className="text-fg-faint mt-3 text-center text-[11px] leading-snug">

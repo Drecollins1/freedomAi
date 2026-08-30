@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -X POST localhost:3111/api/register -H 'Content-Type: application/json' -d '{\"firstName\":\"Ada\",\"email\":\"ada@example.com\",\"whatsapp\":\"+2348012345678\"}' -w \" [%{http_code}]\\\\n\")",
+      "Bash(curl -s -X POST localhost:3111/api/register -H 'Content-Type: application/json' -d '{\"firstName\":\"A\",\"email\":\"nope\",\"whatsapp\":\"1\"}' -w \" [%{http_code}]\\\\n\")",
+      "Bash(curl -s localhost:3111/)",
+      "Bash(pkill -f \"next dev -p 3111\")"
+    ]
+  }
+}

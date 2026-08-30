@@ -2,18 +2,24 @@
  * All page copy and every real-world fact lives here, so the client can edit
  * the page without touching components.
  *
+ * The handful of values that change often — session date and time, the
+ * Telegram links, the member count, the company line — are *defaults* only.
+ * The live values are edited at /admin and read through `@/lib/settings`;
+ * see the `SiteSettings` type there. Everything else is edited in this file.
+ *
  * Anything still wrapped in [BRACKETS] is a placeholder waiting on a real
  * value — search the file for "[" before going live.
  */
 
 export const site = {
   name: "Freedom AI",
-  /** Shown in the nav and above the registration form. */
+  /** Default for `settings.sessionDate` — the live value is set at /admin. */
   sessionDate: "[DATE]",
+  /** Default for `settings.sessionTime` — the live value is set at /admin. */
   sessionTime: "[TIME + TIMEZONE]",
-  /** Telegram channel holding the full testimonial feed. */
+  /** Default for `settings.testimonialsUrl` — the full testimonial channel. */
   testimonialsUrl: "[TELEGRAM TESTIMONY CHANNEL LINK]",
-  /** Invite link for the live-session channel — the hero button points here. */
+  /** Default for `settings.telegramInviteUrl` — the hero button points here. */
   telegramInviteUrl: "https://t.me/+fJRkdmgs5UYwOWY0",
   year: new Date().getFullYear(),
 } as const;
@@ -154,10 +160,7 @@ export const testimonials = {
   heading: "Don't just take my word for it.",
   body: "Messages and screenshots shared by people inside the community.",
   linkLabel: "See more community feedback",
-  /**
-   * Real screenshots from /public/images. Because these show individual
-   * results, the disclaimer below must stay visible next to them.
-   */
+  /** Real screenshots from /public/images. */
   gallery: [
     { src: "/images/testimonial-1.jpeg", width: 880, height: 1080 },
     { src: "/images/testimonial-2.jpeg", width: 805, height: 1080 },
@@ -167,33 +170,27 @@ export const testimonials = {
     { src: "/images/testimonial-6.jpeg", width: 496, height: 1080 },
   ],
   imageAlt: "Screenshot shared by a member of the Freedom AI community",
-  resultsDisclaimer:
-    "Individual results shared by community members. These are not verified by us, are not typical, and are not a promise or projection of future results. Trading carries a risk of losing your capital.",
 } as const;
 
 /**
- * Accountability block: who runs this, and under what legal entity.
+ * Accountability block: who runs this.
  *
- * NOTE: the bracketed values are the only honest way to ship this before the
- * real details exist — a named individual presented as legally responsible for
- * a trading site must be a real, correct person. Replace every [BRACKET] below
- * before this page goes live.
+ * The name, role and words below were supplied by the founder himself. The
+ * photograph in /public/images must be a real photograph of him — a stock or
+ * generated portrait under "there's a real person behind Freedom AI" would
+ * undercut the exact claim the section makes.
  */
 export const owner = {
   eyebrow: "Who is behind this",
   heading: "There's a real person behind Freedom AI.",
-  name: "[FULL NAME]",
-  role: "[ROLE — e.g. Founder & Lead Trader]",
-  /**
-   * Headshot in /public/images.
-   * PLACEHOLDER — swap for a real photograph of the named person before
-   * launch. A stock or generated portrait under "there's a real person behind
-   * Freedom AI" undercuts the exact claim the section makes.
-   */
+  name: "Faloni Jeremiah Oluwagbemiga",
+  role: "Founder",
   photo: "/images/avatar.jpeg" as string | null,
   bio: [
-    "I've spent [NUMBER] years trading the markets, and most of those years were the slow way — screens full of charts, timeframes checked by hand, and plenty of decisions I second-guessed afterwards.",
-    "Freedom AI came out of that. It's the process I actually use, with AI doing the scanning I used to do manually. I run every live session myself, and I show the trades that don't work alongside the ones that do.",
+    "I've spent 5 years trading the market, and for most of those years I did it the slow way. Screens full of charts. Checking timeframe after timeframe manually. Spending hours — sometimes all day and night — watching the market.",
+    "Making decisions, second-guessing them, and sometimes losing money because of poor analysis or simple human errors. Freedom AI came out of that experience. It's built around the process I actually use to analyze the market, with AI helping me do the scanning and filtering that I used to handle manually.",
+    "And I'm not hiding behind a backtested screenshot or showing you only the wins. I run the live sessions myself. You'll see the winning trades. You'll see the losing trades. You'll see the process.",
+    "Because trading isn't about winning every trade. It's about having a better process, managing risk, and making better decisions. That's what Freedom AI was built for.",
   ],
   commitments: [
     "Every live session is run personally — nothing is outsourced or pre-recorded.",
@@ -216,8 +213,12 @@ export const finalCta = {
 
 export const footer = {
   disclaimerLead: "Risk disclaimer.",
+  /**
+   * The company name, registration and jurisdiction are appended to this from
+   * `settings.companyLine`, which is edited at /admin.
+   */
   disclaimer:
-    "Trading foreign exchange, CFDs and other leveraged instruments carries a high level of risk and can result in the loss of all of your capital. Freedom AI provides AI-assisted analysis and education only — it does not provide financial advice, does not execute trades on your behalf, and does not guarantee any result. Past performance is not indicative of future results. Only trade with money you can afford to lose. [ADD YOUR COMPANY NAME, REGISTRATION AND JURISDICTION HERE]",
+    "Trading foreign exchange, CFDs and other leveraged instruments carries a high level of risk and can result in the loss of all of your capital. Freedom AI provides AI-assisted analysis and education only — it does not provide financial advice, does not execute trades on your behalf, and does not guarantee any result. Past performance is not indicative of future results. Only trade with money you can afford to lose.",
   links: [
     { label: "Privacy", href: "#" },
     { label: "Terms", href: "#" },
@@ -275,6 +276,7 @@ export const telegram = {
   ],
   thread: {
     channel: "Freedom AI · Live Analysis",
+    /** Default for `settings.telegramMembers` — the live value is set at /admin. */
     members: "[MEMBER COUNT] members",
     messages: [
       {
