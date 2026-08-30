@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   Palette. Dark is the canonical design; light is a faithful daylight
-   translation of it. Every colour is defined here once and referenced through
-   the @theme block below, so a theme switch repaints the whole page.
+   Palette. The site is dark-only by design. Every colour is defined here once
+   and referenced through the @theme block below, so the whole page repaints
+   from this one place.
    --------------------------------------------------------------------------- */
 
 :root {
@@ -59,102 +59,6 @@
   --ticker-fg: #08090b;
 }
 
-/* Explicit light choice */
-:root[data-theme="light"] {
-  --ink: #f6f7f3;
-  --ink-raised: #ffffff;
-  --panel: #ffffff;
-  --panel-deep: #ffffff;
-  --footer: #eef0ea;
-
-  --fg: #101310;
-  --fg-soft: #2b2f28;
-  --fg-muted: #565b51;
-  --fg-dim: #6f746a;
-  --fg-faint: #989d92;
-
-  --signal: #c8ff4d;
-  --signal-soft: #d7ff7a;
-  --signal-text: #4a7207;
-  --alarm: #b03a28;
-  --cool: #2f5bd0;
-
-  --line: rgba(16, 19, 16, 0.12);
-  --line-soft: rgba(16, 19, 16, 0.08);
-  --line-strong: rgba(16, 19, 16, 0.18);
-
-  --glow-signal: rgba(140, 190, 30, 0.16);
-  --glow-cool: rgba(47, 91, 208, 0.12);
-  --veil: rgba(16, 19, 16, 0.045);
-  --wash: rgba(16, 19, 16, 0.03);
-  --wash-soft: rgba(16, 19, 16, 0.02);
-  --chart-bg-top: #ffffff;
-  --chart-bg-bottom: #f1f3ec;
-  --intro-top: #ffffff;
-  --intro-bottom: #f3f5ee;
-  --device-shell: #e7eae1;
-  --shadow-card: 0 30px 70px rgba(16, 19, 16, 0.16);
-  --shadow-cta: 0 10px 30px rgba(140, 190, 30, 0.35);
-  --candle-up: #1a8f4a;
-  --candle-down: #b8392a;
-  --axis-label: #857028;
-  --trend-a: #3f7a10;
-  --trend-b: #5f9e14;
-  --trend-c: #2f5f08;
-  --arrowhead: #2f5f08;
-  --ticker-bg: #161a14;
-  --ticker-fg: #d7ff7a;
-}
-
-/* System preference, when the visitor has not chosen */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --ink: #f6f7f3;
-    --ink-raised: #ffffff;
-    --panel: #ffffff;
-    --panel-deep: #ffffff;
-    --footer: #eef0ea;
-
-    --fg: #101310;
-    --fg-soft: #2b2f28;
-    --fg-muted: #565b51;
-    --fg-dim: #6f746a;
-    --fg-faint: #989d92;
-
-    --signal: #c8ff4d;
-    --signal-soft: #d7ff7a;
-    --signal-text: #4a7207;
-    --alarm: #b03a28;
-    --cool: #2f5bd0;
-
-    --line: rgba(16, 19, 16, 0.12);
-    --line-soft: rgba(16, 19, 16, 0.08);
-    --line-strong: rgba(16, 19, 16, 0.18);
-
-    --glow-signal: rgba(140, 190, 30, 0.16);
-    --glow-cool: rgba(47, 91, 208, 0.12);
-    --veil: rgba(16, 19, 16, 0.045);
-    --wash: rgba(16, 19, 16, 0.03);
-    --wash-soft: rgba(16, 19, 16, 0.02);
-    --chart-bg-top: #ffffff;
-    --chart-bg-bottom: #f1f3ec;
-    --intro-top: #ffffff;
-    --intro-bottom: #f3f5ee;
-    --device-shell: #e7eae1;
-    --shadow-card: 0 30px 70px rgba(16, 19, 16, 0.16);
-    --shadow-cta: 0 10px 30px rgba(140, 190, 30, 0.35);
-    --candle-up: #1a8f4a;
-    --candle-down: #b8392a;
-    --axis-label: #857028;
-    --trend-a: #3f7a10;
-    --trend-b: #5f9e14;
-    --trend-c: #2f5f08;
-    --arrowhead: #2f5f08;
-    --ticker-bg: #161a14;
-    --ticker-fg: #d7ff7a;
-  }
-}
-
 @theme inline {
   --color-ink: var(--ink);
   --color-ink-raised: var(--ink-raised);
@@ -191,6 +95,9 @@
 html {
   scroll-behavior: smooth;
   background: var(--ink);
+  /* Tells the browser to render form controls, scrollbars and autofill dark,
+     so native UI matches the palette instead of flashing white. */
+  color-scheme: dark;
 }
 
 body {

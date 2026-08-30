@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Archivo, Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/content";
-import { themeScript } from "@/components/ui/ThemeToggle";
 
 /** Heavy grotesque for the hero billboard only — the rest of the page uses Space Grotesk. */
 const archivo = Archivo({
@@ -41,12 +40,10 @@ export const metadata: Metadata = {
   },
 };
 
+/** The site is dark-only, so the browser chrome is told to match, not adapt. */
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#08090b" },
-    { media: "(prefers-color-scheme: light)", color: "#f6f7f3" },
-  ],
-  colorScheme: "dark light",
+  themeColor: "#08090b",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -54,11 +51,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${archivo.variable} ${spaceGrotesk.variable} ${plexSans.variable} ${plexMono.variable} h-full antialiased`}
-      suppressHydrationWarning
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
       <body className="bg-ink text-fg flex min-h-full flex-col">{children}</body>
     </html>
   );

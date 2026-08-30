@@ -1,6 +1,5 @@
 import { Container } from "@/components/ui/Primitives";
 import { LogoMark } from "@/components/ui/Icon";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { cta, site } from "@/lib/content";
 
 export function SiteNav({
@@ -32,8 +31,6 @@ export function SiteNav({
               Free
             </span>
           </span>
-
-          <ThemeToggle />
 
           <a
             href="#register"
